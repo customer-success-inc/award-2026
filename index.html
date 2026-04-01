@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>カスタマーサクセス・アワード2026</title>
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ナビゲーション -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <img src="img/logo_カスタマーサクセス株式会社.jpg" alt="カスタマーサクセス株式会社" class="nav-logo-img">
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">イベント概要</a></li>
+        <li><a href="#contents">当日プログラム</a></li>
+        <li><a href="#schedule">審査スケジュール</a></li>
+        <li><a href="#apply">応募・エントリー</a></li>
+      </ul>
+      <a href="#apply" class="nav-cta">参加申込する</a>
+      <button class="nav-hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- モバイルメニュー -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" onclick="closeMobileMenu()">イベント概要</a></li>
+      <li><a href="#contents" onclick="closeMobileMenu()">当日プログラム</a></li>
+      <li><a href="#schedule" onclick="closeMobileMenu()">審査スケジュール</a></li>
+      <li><a href="#apply" onclick="closeMobileMenu()">応募・エントリー</a></li>
+    </ul>
+  </div>
+
+  <!-- ヒーローセクション -->
+  <section class="hero" id="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-badge fade-in">2026年 初開催</div>
+      <h1 class="hero-title fade-in">
+        <span class="title-sub">Customer Success</span>
+        <span class="title-main">カスタマーサクセス<br>・アワード<span class="title-year">2026</span></span>
+      </h1>
+      <p class="hero-desc fade-in">
+        顧客とともに事業を成長させるカスタマーサクセス。<br>
+        その最前線を見る年に1度の大型イベント
+      </p>
+      <div class="hero-date fade-in">
+        <div class="date-item">
+          <span class="date-icon">📅</span>
+          <span>2026年7月15日（水）17:30〜21:30</span>
+        </div>
+        <div class="date-item">
+          <span class="date-icon">📍</span>
+          <span>住友不動産六本木グランドタワー</span>
+        </div>
+        <div class="date-item">
+          <span class="date-icon">👥</span>
+          <span>オフライン限定 200名</span>
+        </div>
+      </div>
+      <div class="hero-actions fade-in">
+        <a href="#apply" class="btn-primary">今すぐ参加申込</a>
+        <a href="#about" class="btn-secondary">詳細を見る</a>
+      </div>
+
+      <!-- カウントダウン -->
+      <div class="countdown fade-in">
+        <p class="countdown-label">開催まで</p>
+        <div class="countdown-grid">
+          <div class="countdown-item">
+            <span class="count-num" id="countDays">--</span>
+            <span class="count-unit">日</span>
+          </div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-item">
+            <span class="count-num" id="countHours">--</span>
+            <span class="count-unit">時間</span>
+          </div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-item">
+            <span class="count-num" id="countMinutes">--</span>
+            <span class="count-unit">分</span>
+          </div>
+          <div class="countdown-sep">:</div>
+          <div class="countdown-item">
+            <span class="count-num" id="countSeconds">--</span>
+            <span class="count-unit">秒</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- 主催情報バー -->
+  <section class="organizer-bar">
+    <div class="container">
+      <div class="organizer-items">
+        <div class="organizer-item">
+          <span class="org-label">主催</span>
+          <span class="org-name">カスタマーサクセス株式会社</span>
+        </div>
+        <div class="organizer-divider">×</div>
+        <div class="organizer-item">
+          <span class="org-label">特別協力</span>
+          <span class="org-name">一般社団法人 日本カスタマーサクセス協会</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- イベント概要 -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">ABOUT</span>
+        <h2 class="section-title">イベント概要</h2>
+        <p class="section-desc">カスタマーサクセスのベスト・プラクティスを広く共有し、<br>業界の発展を促進する年1回の経営者及びカスタマーサクセス関係者向けカンファレンス</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card reveal">
+          <div class="about-card-icon">🗓</div>
+          <div class="about-card-content">
+            <h3>開催日時</h3>
+            <p><strong>2026年7月15日（水）</strong></p>
+            <p>会場 17:00 ／ 開演 17:30 ／ 終了 21:30</p>
+          </div>
+        </div>
+        <div class="about-card reveal">
+          <div class="about-card-icon">🏢</div>
+          <div class="about-card-content">
+            <h3>会場</h3>
+            <p><strong>住友不動産六本木グランドタワー</strong></p>
+            <p>ウイングアーク1st様オフィス</p>
+          </div>
+        </div>
+        <div class="about-card reveal">
+          <div class="about-card-icon">🎟</div>
+          <div class="about-card-content">
+            <h3>参加形式</h3>
+            <p><strong>オフライン限定</strong></p>
+            <p>定員200名（事前登録制）</p>
+          </div>
+        </div>
+        <div class="about-card reveal">
+          <div class="about-card-icon">🎯</div>
+          <div class="about-card-content">
+            <h3>対象者</h3>
+            <p><strong>経営者・マネジメント層</strong></p>
+            <p>カスタマーサクセス実践者・関係者</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mission-block reveal">
+        <div class="mission-inner">
+          <p class="mission-quote">"カスタマーサクセスの最前線は、ここにある。"</p>
+          <p class="mission-text">
+            顧客に向き合い、成果で応え続けることこそが企業を永く、大きく、成長させる。<br>
+            カスタマーサクセスのベスト・プラクティスを「挑戦を称える」「先進事例を流通させる」の
+            2軸で評価し、日本のカスタマーサクセス全体の底上げを図ります。
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 当日プログラム -->
+  <section class="event-program" id="contents">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">PROGRAM</span>
+        <h2 class="section-title">当日プログラム</h2>
+        <p class="section-desc"><strong>2026年7月15日（水）</strong></p>
+      </div>
+
+      <div class="prog-timeline">
+
+        <!-- 開場 -->
+        <div class="prog-item reveal">
+          <div class="prog-left">
+            <div class="prog-time">17:00</div>
+          </div>
+          <div class="prog-connector">
+            <div class="prog-dot prog-dot-open"></div>
+            <div class="prog-line"></div>
+          </div>
+          <div class="prog-right">
+            <div class="prog-simple-card">
+              <span class="prog-simple-label">OPEN</span>
+              <span class="prog-simple-text">開場・受付開始</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PART 01: アワード -->
+        <div class="prog-item reveal">
+          <div class="prog-left">
+            <div class="prog-time">17:30</div>
+            <div class="prog-time-end">〜 18:40</div>
+          </div>
+          <div class="prog-connector">
+            <div class="prog-dot prog-dot-award"></div>
+            <div class="prog-line"></div>
+          </div>
+          <div class="prog-right">
+            <div class="prog-card prog-card-award">
+              <div class="prog-card-header">
+                <span class="prog-part-badge">PART 01</span>
+                <span class="prog-duration">70分</span>
+              </div>
+              <div class="prog-card-title-block">
+                <div class="prog-card-icon">🏆</div>
+                <div class="prog-card-title-text">
+                  <span class="prog-card-label">挑戦を称える</span>
+                  <h3 class="prog-card-title">カスタマーサクセス・アワード<br><span class="award-subtitle">表彰式 ＆ セッション</span></h3>
+                  <p class="prog-card-org">Presented by 一般社団法人 日本カスタマーサクセス協会</p>
+                </div>
+                <img src="img/logo_jcsa.jpg" alt="一般社団法人 日本カスタマーサクセス協会" class="prog-jcsa-logo">
+              </div>
+              <p class="prog-card-desc">
+                既存の枠組みを越え、組織に変革をもたらした企業を称える表彰式。初年度は
+                「<strong>The Blue Flag of the Year 2026</strong>」賞として、ノミネート3社の中から1社を選出・表彰。
+                組織変革の旗印となった企業の挑戦と成果を、業界全体へ広く共有します。
+              </p>
+
+              <!-- Blue Flag賞 -->
+              <div class="award-flag-section">
+                <div class="award-flag-icon">🚩</div>
+                <div>
+                  <h4 class="award-flag-title">The Blue Flag of the Year 2026</h4>
+                  <p class="award-flag-desc">
+                    協会のシンボル「青い旗」になぞらえた最高賞。業界の旗印となることを目指し、組織・システム・慣習の壁を乗り越え、カスタマーサクセスを経営に根付かせた実績を評価します。SaaS企業に限らず、製造・金融・小売など非SaaS領域の挑戦も大歓迎です。
+                  </p>
+                </div>
+              </div>
+
+              <!-- 評価軸 -->
+              <div class="award-eval-row">
+                <div class="award-eval-item">
+                  <span class="award-eval-num">1</span>
+                  <div>
+                    <strong>突破力</strong>
+                    <p>組織・システム・慣習の壁をどう乗り越えたか</p>
+                  </div>
+                </div>
+                <div class="award-eval-item">
+                  <span class="award-eval-num">2</span>
+                  <div>
+                    <strong>全社インパクト</strong>
+                    <p>経営アジェンダとして昇華させ他部門を巻き込んだか</p>
+                  </div>
+                </div>
+                <div class="award-eval-item">
+                  <span class="award-eval-num">3</span>
+                  <div>
+                    <strong>再現性とガバナンス</strong>
+                    <p>継続的成果を生む仕組みをどう構築したか</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- セッション -->
+              <div class="award-session-block">
+                <h4>受賞企業 × 協会代表理事 トークセッション</h4>
+                <p>
+                  表彰後、受賞企業の代表者と協会代表理事・<strong>山田 ひさのり 氏</strong>によるトークセッションを実施。
+                  変革の舞台裏、実践上の壁とその乗り越え方、そしてこれからのカスタマーサクセスの展望を深く語ります。
+                  「なぜ今、この企業が変われたのか」——その答えがここに。
+                </p>
+                <div class="session-speaker">
+                  <div class="speaker-avatar-sm">山</div>
+                  <div>
+                    <strong>山田 ひさのり</strong>
+                    <span>一般社団法人 日本カスタマーサクセス協会 代表理事 ／ sasket LLC 代表<br>『カスタマーサクセス実行戦略』著者</span>
+                  </div>
+                </div>
+              </div>
+
+              <a href="#apply-award" class="btn-prog-award">企業ノミネートを応募する →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 転換 -->
+        <div class="prog-item reveal">
+          <div class="prog-left">
+            <div class="prog-time">18:40</div>
+          </div>
+          <div class="prog-connector">
+            <div class="prog-dot prog-dot-break"></div>
+            <div class="prog-line"></div>
+          </div>
+          <div class="prog-right">
+            <div class="prog-simple-card prog-break-card">
+              <span class="prog-simple-label">BREAK</span>
+              <span class="prog-simple-text">転換・休憩（約20分）</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- PART 02: 天下一武闘会 -->
+        <div class="prog-item reveal">
+          <div class="prog-left">
+            <div class="prog-time">19:00</div>
+            <div class="prog-time-end">〜 20:40</div>
+          </div>
+          <div class="prog-connector">
+            <div class="prog-dot prog-dot-battle"></div>
+            <div class="prog-line"></div>
+          </div>
+          <div class="prog-right">
+            <div class="prog-card prog-card-battle">
+              <div class="prog-card-header">
+                <span class="prog-part-badge battle-part-badge">PART 02</span>
+                <span class="prog-duration battle-duration">100分</span>
+              </div>
+              <div class="prog-card-title-block">
+                <div>
+                  <span class="prog-card-label battle-prog-label">先進事例を流通させる</span>
+                  <img src="img/logo_tenkaichibutokai.png" alt="カスタマーサクセス天下一武闘会" class="battle-logo">
+                  <p class="battle-prog-sub">2018年より続く 世界初のCSMピッチバトル ／ 待望の復活開催</p>
+                </div>
+              </div>
+
+              <div class="battle-copy-block">
+                <p class="battle-lead">17分で、人生が変わる。</p>
+                <p class="battle-desc">
+                  1年に1度、カスタマーサクセスに関わる人間が最も輝く夜。予選7分・決勝10分、極限のピッチで先進メソッドをぶつけ合い、200名の参加者が「最強のCSM」を決める。
+                  優勝者には賞金50万円と、業界を動かすステージが待っている。2025年12月の開催中止から、待望の復活。この舞台に立てるのか、立てないのか——あとはあなたの覚悟次第だ。
+                </p>
+              </div>
+
+              <div class="battle-prize-block">
+                <div class="battle-prize-inner">
+                  <span class="battle-prize-label">優勝賞金</span>
+                  <span class="battle-prize-amount">¥500,000</span>
+                  <span class="battle-prize-plus">＋ Podcast「SuccessPrimeチャンネル」出演権<br>＋ カスタマーサクセス・カンファレンス メインステージ登壇権</span>
+                </div>
+              </div>
+
+              <!-- 当日の流れ -->
+              <div class="battle-flow-block">
+                <h4>当日の流れ</h4>
+                <div class="battle-flow-steps">
+                  <div class="bflow-step">
+                    <div class="bflow-num">1</div>
+                    <div class="bflow-label">予選</div>
+                    <div class="bflow-detail">7分 × 4名</div>
+                  </div>
+                  <div class="bflow-arrow">▶</div>
+                  <div class="bflow-step">
+                    <div class="bflow-num">2</div>
+                    <div class="bflow-label">決勝</div>
+                    <div class="bflow-detail">10分 × 4名</div>
+                  </div>
+                  <div class="bflow-arrow">▶</div>
+                  <div class="bflow-step bflow-winner">
+                    <div class="bflow-num">🏆</div>
+                    <div class="bflow-label">優勝者発表</div>
+                    <div class="bflow-detail">参加者全員で投票！</div>
+                  </div>
+                </div>
+                <p class="battle-vote-note">★ 優勝者は当日ご参加の皆さまの投票で決定！あなたの1票が、最強のCSMを生み出す。</p>
+              </div>
+
+              <!-- 事前審査員 -->
+              <div class="battle-judges-block">
+                <h4><span>📋</span> 事前審査員（登壇者選考）</h4>
+                <p class="judge-intro">当日の登壇者は、5名の審査員による書類・プレゼン動画の審査によって決定します。</p>
+                <div class="judges-grid">
+                  <div class="judge-card">
+                    <strong>田中 健一</strong>
+                    <span>株式会社SaaSグロース<br>VP of Customer Success</span>
+                  </div>
+                  <div class="judge-card">
+                    <strong>鈴木 理恵</strong>
+                    <span>合同会社サクセスラボ<br>代表</span>
+                  </div>
+                  <div class="judge-card">
+                    <strong>山本 拓也</strong>
+                    <span>株式会社スケールテック<br>Head of CS</span>
+                  </div>
+                  <div class="judge-card">
+                    <strong>佐藤 美咲</strong>
+                    <span>株式会社インサイトフォース<br>執行役員 CCO</span>
+                  </div>
+                  <div class="judge-card">
+                    <strong>渡辺 浩二</strong>
+                    <span>株式会社フィールドCS<br>CS部門長</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 当日コメンテーター -->
+              <div class="battle-commentators-block">
+                <h4><span>🎙</span> 当日コメンテーター</h4>
+                <p class="commentator-intro">業界最高峰の眼をもつ2名が、登壇者のピッチにリアルタイムでコメントします。</p>
+                <div class="commentators-grid">
+                  <div class="commentator-card">
+                    <div class="commentator-avatar prev-winner-avatar">中<br><small>村</small></div>
+                    <div class="commentator-info">
+                      <span class="commentator-role prev-winner-role">⚔️ 前回優勝者</span>
+                      <strong class="commentator-name">中村 颯太</strong>
+                      <span class="commentator-org">カスタマーサクセス天下一武闘会 2024 優勝<br>株式会社ネクストCS / Head of CS</span>
+                    </div>
+                  </div>
+                  <div class="commentator-card">
+                    <div class="commentator-avatar ceo-avatar">岩</div>
+                    <div class="commentator-info">
+                      <span class="commentator-role ceo-role">🏢 主催代表</span>
+                      <strong class="commentator-name">岩熊 勇斗</strong>
+                      <span class="commentator-org">カスタマーサクセス株式会社<br>共同創業者 代表取締役CEO</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 過去の天下一武闘会 -->
+              <div class="battle-history-block">
+                <h4><span>📸</span> 過去の天下一武闘会</h4>
+                <div class="battle-slideshow">
+                  <div class="battle-slides">
+                    <img src="img/tenkaichi/banner_2021.png" alt="天下一武闘会 2021" class="battle-slide">
+                    <img src="img/tenkaichi/banner_2022.png" alt="天下一武闘会 2022" class="battle-slide">
+                    <img src="img/tenkaichi/banner_2023.png" alt="天下一武闘会 2023" class="battle-slide">
+                    <img src="img/tenkaichi/winner2023.jpg" alt="天下一武闘会 2023 優勝" class="battle-slide">
+                    <img src="img/tenkaichi/banner_2025.png" alt="天下一武闘会 2025" class="battle-slide">
+                  </div>
+                  <button class="slide-btn slide-prev" onclick="slideMove(this,-1)">&#8249;</button>
+                  <button class="slide-btn slide-next" onclick="slideMove(this,1)">&#8250;</button>
+                  <div class="slide-dots" id="slideDots"></div>
+                </div>
+              </div>
+
+              <!-- 今年の出場者 -->
+              <div class="battle-entrants-block">
+                <h4><span>⚔️</span> 今年の出場者</h4>
+                <div class="entrants-reveal">
+                  <div class="entrants-date">6.15</div>
+                  <p class="entrants-reveal-label">出場者発表！！</p>
+                  <p class="entrants-entry">📢 出場エントリー募集中！　締切：<strong>5月31日</strong></p>
+                  <p class="entrants-prize">💰 賞金50万円を手にする最強のCSMは誰だ！？</p>
+                </div>
+              </div>
+
+              <div class="battle-cta-block">
+                <a href="#apply-battle" class="btn-prog-battle">⚔️ 出場エントリーする</a>
+                <p class="battle-deadline">応募締切：2026年5月31日</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 懇親会 -->
+        <div class="prog-item reveal">
+          <div class="prog-left">
+            <div class="prog-time">20:40</div>
+            <div class="prog-time-end">〜 22:00</div>
+          </div>
+          <div class="prog-connector">
+            <div class="prog-dot prog-dot-party"></div>
+          </div>
+          <div class="prog-right">
+            <div class="prog-card prog-card-party">
+              <div class="prog-card-header">
+                <span class="prog-part-badge party-badge">PARTY</span>
+                <span class="prog-duration">80分</span>
+              </div>
+              <div class="prog-card-title-block">
+                <div class="prog-card-icon">🥂</div>
+                <div>
+                  <h3 class="prog-card-title">懇親会</h3>
+                </div>
+              </div>
+              <img src="img/party/passed_tenkaichi.gif" alt="懇親会の様子" class="party-gif">
+              <p class="prog-card-desc">
+                全プログラム終了後、会場にて懇親会を開催。登壇者・受賞企業・参加者・協会メンバーが一堂に会し、熱い夜の続きをフラットな場で。カスタマーサクセスを本気で考える仲間との繋がりが、ここで生まれます。
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /prog-timeline -->
+    </div>
+  </section>
+
+  <!-- スケジュール -->
+  <section class="schedule" id="schedule">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">SCHEDULE</span>
+        <h2 class="section-title">審査スケジュール</h2>
+        <p class="section-desc">エントリーから当日まで</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">1</div>
+          <div class="timeline-content">
+            <div class="timeline-date">4月15日〜5月31日</div>
+            <h3 class="timeline-title">募集期間</h3>
+            <div class="timeline-body">
+              <div class="timeline-col">
+                <span class="timeline-col-label award-label">アワード（企業）</span>
+                <p>情報公開・エントリー開始<br>自薦・他薦の受付</p>
+              </div>
+              <div class="timeline-col">
+                <span class="timeline-col-label battle-label">天下一武闘会（個人）</span>
+                <p>情報公開・エントリー開始<br>テーマに沿った応募受付</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-content">
+            <div class="timeline-date">6月1日〜6月14日</div>
+            <h3 class="timeline-title">選考期間</h3>
+            <div class="timeline-body">
+              <div class="timeline-col">
+                <span class="timeline-col-label award-label">アワード（企業）</span>
+                <p>事務局・審査員による<br>インタビューと書類選考</p>
+              </div>
+              <div class="timeline-col">
+                <span class="timeline-col-label battle-label">天下一武闘会（個人）</span>
+                <p>書類・動画による選考</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">3</div>
+          <div class="timeline-content">
+            <div class="timeline-date">6月15日</div>
+            <h3 class="timeline-title">選出発表</h3>
+            <div class="timeline-body">
+              <div class="timeline-col">
+                <span class="timeline-col-label award-label">アワード（企業）</span>
+                <p>ノミネート企業（3社）発表</p>
+              </div>
+              <div class="timeline-col">
+                <span class="timeline-col-label battle-label">天下一武闘会（個人）</span>
+                <p>登壇者（予選進出者）発表</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">4</div>
+          <div class="timeline-content">
+            <div class="timeline-date">6月15日〜7月14日</div>
+            <h3 class="timeline-title">準備期間</h3>
+            <div class="timeline-body">
+              <div class="timeline-col">
+                <span class="timeline-col-label award-label">アワード（企業）</span>
+                <p>当日プレゼン資料作成・提出</p>
+              </div>
+              <div class="timeline-col">
+                <span class="timeline-col-label battle-label">天下一武闘会（個人）</span>
+                <p>スライド作成・事前リハーサル</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item timeline-final reveal">
+          <div class="timeline-dot timeline-dot-final">🏆</div>
+          <div class="timeline-content">
+            <div class="timeline-date highlight-date">7月15日（水）</div>
+            <h3 class="timeline-title">イベント当日</h3>
+            <div class="timeline-body">
+              <div class="timeline-col">
+                <span class="timeline-col-label award-label">アワード（企業）</span>
+                <p>最終プレゼン・<strong>最優秀賞決定</strong></p>
+              </div>
+              <div class="timeline-col">
+                <span class="timeline-col-label battle-label">天下一武闘会（個人）</span>
+                <p>予選・本選・<strong>優勝者決定</strong></p>
+              </div>
+            </div>
+            <div class="event-timetable">
+              <div class="timetable-item">開場</div>
+              <div class="timetable-item">アワード表彰セッション</div>
+              <div class="timetable-item">天下一武闘会 予選・決勝</div>
+              <div class="timetable-item">優勝者発表</div>
+              <div class="timetable-item">懇親会</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 応募・エントリー -->
+  <section class="apply" id="apply">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">ENTRY</span>
+        <h2 class="section-title">応募・エントリー</h2>
+        <p class="section-desc">エントリー受付期間：<strong>2026年4月15日（火）〜 5月31日（日）</strong></p>
+      </div>
+
+      <div class="apply-grid">
+        <!-- アワード応募 -->
+        <div class="apply-card reveal" id="apply-award">
+          <div class="apply-card-header award-header">
+            <span class="apply-type">AWARD</span>
+            <h3>カスタマーサクセス・アワード<br><span class="apply-h3-sub">企業ノミネート 募集</span></h3>
+          </div>
+          <div class="apply-card-body">
+            <p class="apply-lead">既存の枠組みを持つ組織でCSを変えた——<br>その挑戦を、業界の舞台で称えます。</p>
+            <h4>こんな組織を探しています</h4>
+            <ul>
+              <li>CSを新設し、立ち上げ・拡大を力強く推進したチーム</li>
+              <li>CS推進のために部門横断の組織変革に挑んだチーム</li>
+              <li>製造業・金融・小売など非SaaS領域の大企業 — 特に歓迎！</li>
+            </ul>
+            <h4>審査の3軸</h4>
+            <div class="eval-items">
+              <div class="eval-item">
+                <span class="eval-num">1</span>
+                <div>
+                  <strong>突破力</strong>
+                  <p>複雑なシステム・慣習・組織の壁をどう乗り越えたか</p>
+                </div>
+              </div>
+              <div class="eval-item">
+                <span class="eval-num">2</span>
+                <div>
+                  <strong>全社的インパクト</strong>
+                  <p>経営アジェンダとして昇華し、他部門を動かしたか</p>
+                </div>
+              </div>
+              <div class="eval-item">
+                <span class="eval-num">3</span>
+                <div>
+                  <strong>再現性とガバナンス</strong>
+                  <p>継続的に成果を出す仕組み・統制をどう構築したか</p>
+                </div>
+              </div>
+            </div>
+            <div class="apply-flow">
+              <h4>選定の流れ</h4>
+              <div class="apply-flow-steps">
+                <div class="apply-flow-step">
+                  <span class="flow-num">①</span>
+                  <span>エントリーフォームで応募</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="apply-flow-step">
+                  <span class="flow-num">②</span>
+                  <span>審査委員によるインタビュー</span>
+                </div>
+                <div class="flow-arrow">→</div>
+                <div class="apply-flow-step">
+                  <span class="flow-num">③</span>
+                  <span>ノミネート企業決定（6/15発表）</span>
+                </div>
+              </div>
+            </div>
+            <p class="apply-qual">📋 自薦・他薦どちらも可。当日登壇できる企業を歓迎。</p>
+          </div>
+          <div class="apply-card-footer">
+            <a href="#" class="btn-apply award-apply">🏆 企業ノミネートに応募する</a>
+            <p class="apply-note">応募フォームより書類（形式不問）にて提出。詳細はリンク先をご確認ください。</p>
+          </div>
+        </div>
+
+        <!-- 天下一武闘会応募 -->
+        <div class="apply-card apply-card-battle-entry reveal" id="apply-battle">
+          <div class="apply-card-header battle-header">
+            <span class="apply-type">BATTLE</span>
+            <h3>天下一武闘会<br><span class="apply-h3-sub">出場者 募集</span></h3>
+          </div>
+          <div class="apply-card-body">
+            <p class="apply-lead battle-lead-text">あなたの17分が、業界を動かす。<br>最強のCSMを決める舞台に立て。</p>
+            <div class="battle-theme-box">
+              <span class="battle-theme-label">🔥 今年のテーマ</span>
+              <p class="battle-theme-text">スケールするカスタマーサクセスにおける<br>アウトカム創出への取り組み</p>
+              <p class="battle-theme-note">T2D3 / マルチプロダクト / 顧客数倍増 / 組織拡大...</p>
+            </div>
+            <h4>こんな人を探しています</h4>
+            <ul>
+              <li>ビジネス成果と顧客アウトカムの両面で実績を出したCS従事者（個人）</li>
+              <li>BtoBソフトウェアで独自の取り組みを実践・成果を出した方</li>
+              <li>知見を言語化し、業界に還元したい意志を持つ方</li>
+            </ul>
+            <h4>投票の3基準</h4>
+            <div class="eval-items">
+              <div class="eval-item">
+                <span class="eval-num battle-num">1</span>
+                <div>
+                  <strong>先進性</strong>
+                  <p>既存を超えた創意工夫・オリジナリティある取り組みか</p>
+                </div>
+              </div>
+              <div class="eval-item">
+                <span class="eval-num battle-num">2</span>
+                <div>
+                  <strong>波及性</strong>
+                  <p>数年後のCS業界スタンダードになり得るか</p>
+                </div>
+              </div>
+              <div class="eval-item">
+                <span class="eval-num battle-num">3</span>
+                <div>
+                  <strong>プレゼン力</strong>
+                  <p>参加者200名を惹きつける圧倒的な表現力</p>
+                </div>
+              </div>
+            </div>
+            <h4>優勝特典</h4>
+            <div class="prize-items">
+              <div class="prize-item">🏆 優勝賞金 <strong>50万円</strong></div>
+              <div class="prize-item">🎙 Podcast「SuccessPrimeチャンネル」出演</div>
+              <div class="prize-item">🎤 カスタマーサクセス・カンファレンス メインステージ登壇権</div>
+            </div>
+            <p class="apply-qual">📋 自薦・他薦どちらも可。当日現地でピッチできる個人を歓迎。</p>
+          </div>
+          <div class="apply-card-footer battle-footer">
+            <a href="#" class="btn-apply battle-apply">⚔️ 出場エントリーする</a>
+            <p class="apply-note">応募フォームより書類（形式不問）にて提出。詳細はリンク先をご確認ください。</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 観覧参加 -->
+      <div class="ticket-block reveal">
+        <div class="ticket-inner">
+          <div class="ticket-text">
+            <h3>観覧参加申込</h3>
+            <p>当日の熱狂を現地で体感してください。<br>オフライン限定200名 ／ 先着順</p>
+          </div>
+          <a href="https://customer-success.co.jp/contact" target="_blank" rel="noopener" class="btn-ticket">参加申込する</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主催者紹介 -->
+  <section class="organizer" id="organizer">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-tag">ORGANIZER</span>
+        <h2 class="section-title">主催・特別協力</h2>
+      </div>
+
+      <div class="organizer-grid">
+        <div class="org-card reveal">
+          <div class="org-card-label">主催</div>
+          <img src="img/logo_カスタマーサクセス株式会社.jpg" alt="カスタマーサクセス株式会社" class="org-logo">
+          <h3 class="org-logo-sub">カスタマーサクセス株式会社</h3>
+          <a href="https://customer-success.co.jp/" target="_blank" rel="noopener" class="org-hp-link">HP: https://customer-success.co.jp/</a>
+          <p class="org-mission">ミッション「本物の企業で溢れる社会をつくる」</p>
+          <p class="org-desc">カスタマーサクセスに関するコンサルティング・人材育成・採用支援事業を展開。カスタマーサクセスの普及と社会実装を推進しています。</p>
+          <div class="founders">
+            <div class="founder">
+              <img src="https://storage.googleapis.com/studio-cms-assets/projects/BRO3QdAKaD/s-1600x2000_v-frms_webp_8b28c28a-9910-42e5-9286-41f59d791cb9_middle.webp" alt="岩熊 勇斗" class="founder-photo">
+              <div class="founder-info">
+                <strong>岩熊 勇斗</strong>
+                <span>共同創業者 代表取締役CEO</span>
+                <small>DeNA / 弁護士ドットコム（クラウドサイン）/ コミューン</small>
+              </div>
+            </div>
+            <div class="founder">
+              <img src="https://storage.googleapis.com/studio-cms-assets/projects/BRO3QdAKaD/s-1600x2000_v-frms_webp_2f2aa60d-bba1-474f-a4b3-7cce95401301_middle.webp" alt="梶原 将翔" class="founder-photo">
+              <div class="founder-info">
+                <strong>梶原 将翔</strong>
+                <span>共同創業者 代表取締役COO</span>
+                <small>LayerX / 日本カスタマーサクセス協会 事務局</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="org-card reveal">
+          <div class="org-card-label cooperation">特別協力</div>
+          <img src="img/logo_jcsa.jpg" alt="一般社団法人 日本カスタマーサクセス協会" class="org-logo">
+          <h3 class="org-logo-sub">一般社団法人 日本カスタマーサクセス協会</h3>
+          <a href="https://www.jpncsa.org/" target="_blank" rel="noopener" class="org-hp-link">HP: https://www.jpncsa.org/</a>
+          <p class="org-mission">ミッション「カスタマーサクセスで、顧客と共に企業が持続的に成長できる社会を実現する」</p>
+          <p class="org-desc">2024年設立。日本で初めてカスタマーサクセスの啓蒙と標準化を目指す中立的な団体。大手IT企業を中心に40社が加盟。</p>
+          <div class="member-logos">
+            <div class="member-logo-item">SmartHR</div>
+            <div class="member-logo-item">Gainsight</div>
+            <div class="member-logo-item">PKSHA</div>
+            <div class="member-logo-item">RICOH</div>
+            <div class="member-logo-item">Sansan</div>
+            <div class="member-logo-item">WingArc1st</div>
+            <div class="member-logo-item">Box</div>
+            <div class="member-logo-item">NEC</div>
+            <div class="member-logo-item">STORES</div>
+            <div class="member-logo-item">Cybozu</div>
+            <div class="member-logo-item">RAKSUL</div>
+            <div class="member-logo-item">他多数</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 応援団 -->
+      <div class="supporters reveal">
+        <h3 class="supporters-title">応援団</h3>
+        <p class="supporters-desc">ミッションに共感してくださる業界のトップランナーやエキスパートの方々が応援しています</p>
+        <div class="supporters-grid">
+          <div class="supporter-item">
+            <img src="img/supporters/ouendan_inafune.png" alt="稲船 祐介" class="supporter-photo">
+            <strong>稲船 祐介</strong>
+            <span class="supporter-company">株式会社SmartHR</span>
+            <span class="supporter-title">グロース・ディベロップメント本部 本部長<br>（元カスタマーサクセス本部 本部長）</span>
+          </div>
+          <div class="supporter-item">
+            <img src="img/supporters/ouendan_osawa.png" alt="大沢 遼平" class="supporter-photo">
+            <strong>大沢 遼平</strong>
+            <span class="supporter-company">株式会社ユーザベース</span>
+            <span class="supporter-title">執行役員 B2B事業<br>プロフェッショナルファーム領域統括</span>
+          </div>
+          <div class="supporter-item">
+            <img src="img/supporters/ouendan_jinyama.png" alt="陣山 一樹" class="supporter-photo">
+            <strong>陣山 一樹</strong>
+            <span class="supporter-company">STORES 株式会社</span>
+            <span class="supporter-title">サクセス本部 本部長</span>
+          </div>
+          <div class="supporter-item">
+            <img src="img/supporters/ouendan_suzuki.png" alt="鈴木 奨平" class="supporter-photo">
+            <strong>鈴木 奨平</strong>
+            <span class="supporter-company">スタートスイッチ株式会社</span>
+            <span class="supporter-title">代表取締役</span>
+          </div>
+          <div class="supporter-item">
+            <img src="img/supporters/ouendan_takahashi.png" alt="高橋 歩" class="supporter-photo">
+            <strong>高橋 歩</strong>
+            <span class="supporter-company">株式会社才流</span>
+            <span class="supporter-title">コンサルティング事業部 マネージャー</span>
+          </div>
+          <div class="supporter-item">
+            <img src="img/supporters/ouendan_miyamoto.png" alt="宮本 和典" class="supporter-photo">
+            <strong>宮本 和典</strong>
+            <span class="supporter-company">株式会社プレイド</span>
+            <span class="supporter-title">Head of HRBP<br>（元カスタマーサクセス部長）</span>
+          </div>
+          <div class="supporter-item">
+            <img src="img/supporters/ouendan_yamada-k.png" alt="山田 健児" class="supporter-photo">
+            <strong>山田 健児</strong>
+            <span class="supporter-company">株式会社IVRy</span>
+            <span class="supporter-title">VP of Customer Success /<br>Head of General Business</span>
+          </div>
+          <div class="supporter-item">
+            <img src="img/supporters/ouendan_yamada-h.png" alt="山田 ひさのり" class="supporter-photo">
+            <strong>山田 ひさのり</strong>
+            <span class="supporter-company">一般社団法人 日本カスタマーサクセス協会</span>
+            <span class="supporter-title">代表理事</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="cta-bg"></div>
+    <div class="container">
+      <div class="cta-content reveal">
+        <h2>カスタマーサクセスの最前線は、<br>ここにある。</h2>
+        <p>2026年7月15日（水）、六本木で会いましょう。</p>
+        <div class="cta-actions">
+          <a href="#apply" class="btn-primary btn-large">参加申込する</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- フッター -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <img src="img/logo_カスタマーサクセス株式会社.jpg" alt="カスタマーサクセス株式会社" class="footer-logo-img">
+          <p>カスタマーサクセス株式会社</p>
+          <p>東京都千代田区大手町1-5-1<br>大手町ファーストスクエアイーストタワー4F</p>
+          <a href="https://customer-success.co.jp/" target="_blank">customer-success.co.jp</a>
+        </div>
+        <div class="footer-links">
+          <h4>イベント</h4>
+          <ul>
+            <li><a href="#about">イベント概要</a></li>
+            <li><a href="#contents">当日プログラム</a></li>
+            <li><a href="#schedule">審査スケジュール</a></li>
+            <li><a href="#apply">応募・エントリー</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>お問い合わせ</h4>
+          <ul>
+            <li><a href="https://customer-success.co.jp/contact" target="_blank" rel="noopener">スポンサーシップについて</a></li>
+            <li><a href="https://customer-success.co.jp/contact" target="_blank" rel="noopener">取材・メディア掲載</a></li>
+            <li><a href="https://customer-success.co.jp/contact" target="_blank" rel="noopener">その他のお問い合わせ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>特別協力：一般社団法人 日本カスタマーサクセス協会</p>
+        <p>&copy; 2026 Customer Success, Inc. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
