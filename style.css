@@ -42,6 +42,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -50,6 +51,7 @@ body {
   background: var(--white);
   overflow-x: hidden;
   line-height: 1.7;
+  max-width: 100vw;
 }
 
 .container {
@@ -89,13 +91,10 @@ body {
 }
 
 .nav-logo-img {
-  height: 32px;
+  height: 24px;
   width: auto;
   object-fit: contain;
   display: block;
-  background: #ffffff;
-  border-radius: 6px;
-  padding: 4px 10px;
 }
 
 .nav-logo {
@@ -153,6 +152,22 @@ body {
 .nav-cta:hover {
   background: var(--blue-light);
   transform: translateY(-1px);
+}
+
+/* スマホ用ナビCTAボタン（PCでは非表示） */
+.nav-cta-mobile {
+  display: none;
+  background: var(--white);
+  color: var(--blue);
+  text-decoration: none;
+  padding: 7px 14px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+  border: 2px solid var(--blue-light);
+  white-space: nowrap;
+  margin-left: auto;
 }
 
 .nav-hamburger {
@@ -531,7 +546,7 @@ section {
 
 .section-desc {
   color: var(--text-light);
-  font-size: 16px;
+  font-size: 22px;
   line-height: 1.8;
 }
 
@@ -1544,7 +1559,7 @@ section {
 
 .org-logo {
   display: block;
-  height: 56px;
+  height: 48px;
   width: auto;
   max-width: 100%;
   object-fit: contain;
@@ -1828,14 +1843,11 @@ section {
 }
 
 .footer-logo-img {
-  height: 40px;
+  height: 36px;
   width: auto;
   object-fit: contain;
   display: block;
   margin-bottom: 14px;
-  background: #ffffff;
-  border-radius: 6px;
-  padding: 5px 12px;
 }
 
 .footer-brand p {
@@ -1903,6 +1915,9 @@ section {
   .nav-links, .nav-cta {
     display: none;
   }
+  .nav-cta-mobile {
+    display: inline-block;
+  }
   .nav-hamburger {
     display: flex;
   }
@@ -1964,17 +1979,53 @@ section {
   }
 
   .hero-actions {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    padding: 12px 18px;
+    font-size: 13px;
+  }
+
+  .hero-title .title-main {
+    font-size: clamp(1.6rem, 7vw, 2.4rem);
+  }
+
+  .title-year {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .hero-desc {
+    font-size: 0.9rem;
+  }
+
+  .count-num {
+    font-size: 2rem;
+  }
+
+  .countdown-item {
+    min-width: 44px;
   }
 
   .organizer-items {
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .organizer-divider {
+    display: none;
   }
 
   .mission-block {
     padding: 32px 24px;
+  }
+
+  .mission-quote {
+    font-size: clamp(1.1rem, 5vw, 1.5rem);
   }
 
   .about-grid {
@@ -2002,12 +2053,62 @@ section {
     padding: 20px;
   }
 
+  .apply-flow-steps {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+  }
+
+  .flow-arrow {
+    transform: rotate(90deg);
+    text-align: center;
+  }
+
+  .eval-items {
+    gap: 8px;
+  }
+
+  .battle-theme-text {
+    font-size: 0.85rem;
+  }
+
   .ticket-block {
     padding: 28px 24px;
   }
 
   .content-card {
     padding: 28px 24px;
+  }
+
+  .timeline-content {
+    padding: 18px 16px;
+  }
+
+  .footer-inner {
+    gap: 24px;
+  }
+
+  /* 主催バーの「一般社団法人」をスマホで非表示 */
+  .org-name-prefix {
+    display: none;
+  }
+
+  /* 当日プログラム内の見出し（h4）を大きく */
+  .prog-card h4,
+  .battle-judges-block h4,
+  .battle-commentators-block h4,
+  .battle-history-block h4,
+  .battle-entrants-block h4,
+  .award-session-block h4 {
+    font-size: 1rem;
+  }
+
+  .award-flag-title {
+    font-size: 1.05rem;
+  }
+
+  .prog-card-label {
+    font-size: 0.78rem;
   }
 }
 
@@ -2996,22 +3097,64 @@ section {
   color: var(--gold-light);
 }
 
-/* ── レスポンシブ ── */
+/* ── プログラム レスポンシブ (スマホ: 縦並び) ── */
 @media (max-width: 640px) {
+  /* ナビ */
+  .nav-inner {
+    padding: 0 16px;
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .nav-logo-img {
+    max-width: 120px;
+    height: 22px;
+  }
+  /* 時刻・コネクター・カードを縦積みに */
   .prog-item {
-    grid-template-columns: 70px 32px 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 32px;
+  }
+
+  .prog-left {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 0 0 8px 0;
+    text-align: left;
+    border-bottom: 2px solid rgba(24,72,232,0.2);
+    margin-bottom: 12px;
   }
 
   .prog-time {
-    font-size: 0.95rem;
+    font-size: 1.3rem;
   }
 
   .prog-time-end {
-    font-size: 0.68rem;
+    font-size: 0.85rem;
+  }
+
+  .prog-connector {
+    display: none;
+  }
+
+  .prog-right {
+    padding-left: 0;
+    padding-bottom: 0;
   }
 
   .prog-card {
-    padding: 22px 18px;
+    padding: 20px 16px;
+  }
+
+  /* 簡易ブロック（開場・休憩）も横幅フル */
+  .prog-simple-card,
+  .prog-break-card {
+    width: 100%;
+    box-sizing: border-box;
   }
 
   .prog-card-title {
@@ -3022,8 +3165,18 @@ section {
     font-size: 1.5rem;
   }
 
+  .battle-logo {
+    max-width: 100%;
+  }
+
   .battle-prize-amount {
     font-size: 1.7rem;
+  }
+
+  .battle-prize-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
 
   .battle-flow-steps {
@@ -3037,21 +3190,81 @@ section {
   }
 
   .judges-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .commentators-grid {
     grid-template-columns: 1fr;
   }
 
-  .battle-prize-inner {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-
   .prog-card-title-block {
     flex-direction: column;
     gap: 8px;
   }
+
+  .prog-jcsa-logo {
+    height: 40px;
+    align-self: flex-start;
+  }
+
+  .battle-slideshow {
+    max-width: 100%;
+  }
+
+  .party-gif {
+    max-width: 100%;
+  }
+
+  .entrants-date {
+    font-size: 3rem;
+  }
+
+  .entrants-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* アワードカード内の全要素を幅内に収める */
+  .prog-card,
+  .prog-card-award,
+  .prog-card-battle,
+  .prog-card-party,
+  .prog-right,
+  .award-flag-section,
+  .award-eval-row,
+  .award-session-block,
+  .battle-copy-block,
+  .battle-prize-block,
+  .battle-flow-block,
+  .battle-judges-block,
+  .battle-commentators-block,
+  .battle-history-block,
+  .battle-entrants-block,
+  .battle-theme-box {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  /* コンテナ全体 */
+  .container {
+    padding: 0 16px;
+    box-sizing: border-box;
+  }
+
+  /* prog-timeline も画面内に */
+  .prog-timeline {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* カウントダウン数字 */
+  .countdown-item {
+    min-width: 36px;
+  }
+
+  .count-num {
+    font-size: 1.6rem;
+  }
 }
+
