@@ -1423,6 +1423,10 @@ section {
   padding: 24px 32px;
   border-top: 1px solid var(--gray-200);
   background: var(--gray-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .btn-apply {
@@ -2094,13 +2098,13 @@ section {
   }
 
   /* 当日プログラム内の見出し（h4）を大きく */
-  .prog-card h4,
+  .battle-prize-block h4,
+  .battle-flow-block h4,
   .battle-judges-block h4,
   .battle-commentators-block h4,
   .battle-history-block h4,
-  .battle-entrants-block h4,
-  .award-session-block h4 {
-    font-size: 1rem;
+  .battle-entrants-block h4 {
+    font-size: 1.1rem;
   }
 
   .award-flag-title {
@@ -2259,7 +2263,7 @@ section {
 
 .prog-part-badge {
   font-family: var(--font-en);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   color: var(--blue);
@@ -2294,23 +2298,29 @@ section {
 .prog-card-title-block {
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   gap: 16px;
   margin-bottom: 16px;
 }
 
 .prog-card-title-text {
   flex: 1;
+  min-width: 0;
+}
+
+.prog-card-title-logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
 }
 
 .prog-jcsa-logo {
-  flex-shrink: 0;
-  height: 52px;
-  width: auto;
+  width: 160px;
+  height: auto;
   object-fit: contain;
   background: #ffffff;
   border-radius: 8px;
   padding: 6px 10px;
-  margin-left: auto;
 }
 
 .prog-card-icon {
@@ -2321,13 +2331,12 @@ section {
 }
 
 .prog-card-label {
-  display: block;
-  font-size: 0.72rem;
+  display: inline-block;
+  font-size: 0.9rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   color: var(--blue-light);
   text-transform: uppercase;
-  margin-bottom: 4px;
 }
 
 .battle-prog-label {
@@ -2364,9 +2373,17 @@ section {
   letter-spacing: -0.01em;
 }
 
+.award-logo {
+  display: block;
+  max-width: 280px;
+  width: 100%;
+  height: auto;
+  margin: 8px auto 6px;
+}
+
 .battle-logo {
   display: block;
-  max-width: 340px;
+  max-width: 400px;
   width: 100%;
   height: auto;
   margin: 8px 0 4px;
@@ -2403,8 +2420,16 @@ section {
   background: var(--blue-pale);
   border-radius: var(--radius-sm);
   padding: 18px 20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   align-items: flex-start;
+}
+
+.award-flag-logo {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  align-self: flex-start;
 }
 
 .award-flag-icon {
@@ -2430,7 +2455,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 24px;
+  margin-bottom: 44px;
 }
 
 .award-eval-item {
@@ -2478,12 +2503,90 @@ section {
   border: 1px solid var(--blue-pale);
   border-radius: var(--radius-sm);
   padding: 20px;
-  margin-bottom: 24px;
+  margin-bottom: 44px;
+}
+
+.session-subtitle {
+  font-size: 0.85rem;
+  color: var(--blue-dark);
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: -4px;
+}
+
+.award-section-h4 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--blue-dark);
+  margin: 28px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--blue-pale);
+}
+
+.award-judges-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.award-judge-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  background: #f5f8ff;
+  border: 1px solid var(--blue-pale);
+  border-radius: var(--radius-sm);
+  padding: 16px 12px;
+}
+
+.award-judge-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--blue-pale);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.award-judge-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.award-judge-name {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.award-judge-org {
+  font-size: 0.72rem;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+.award-judge-title {
+  font-size: 0.72rem;
+  color: var(--blue-dark);
+  font-weight: 600;
+}
+
+.speaker-photo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--blue-pale);
 }
 
 .award-session-block h4 {
-  font-size: 0.9rem;
-  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 800;
   color: var(--blue-dark);
   margin-bottom: 10px;
 }
@@ -2513,14 +2616,14 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
+  font-size: 1.4rem;
   font-weight: 700;
   flex-shrink: 0;
 }
 
 .session-speaker strong {
   display: block;
-  font-size: 0.88rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--text);
 }
@@ -2532,7 +2635,9 @@ section {
 }
 
 .btn-prog-award {
-  display: inline-block;
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
   background: var(--blue);
   color: var(--white);
   font-weight: 700;
@@ -2570,7 +2675,7 @@ section {
   border: 1px solid rgba(232,64,10,0.3);
   border-radius: var(--radius-sm);
   padding: 20px 24px;
-  margin-bottom: 24px;
+  margin-bottom: 44px;
 }
 
 .battle-lead {
@@ -2593,57 +2698,192 @@ section {
 }
 
 .battle-prize-block {
-  margin-bottom: 28px;
+  margin-bottom: 48px;
+}
+
+.battle-prize-block h4 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.battle-prize-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.battle-prize-benefits {
+  align-items: center;
+}
+
+.battle-prize-plus-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.battle-prize-plus-list li {
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: var(--fire-light);
+  background: rgba(232,64,10,0.15);
+  border: 1px solid rgba(232,64,10,0.3);
+  border-radius: 6px;
+  padding: 8px 12px 8px 28px;
+  position: relative;
+  text-align: left;
+}
+
+.battle-prize-plus-list li::before {
+  content: '＋';
+  position: absolute;
+  left: 10px;
+  color: var(--fire-light);
+  font-weight: 900;
 }
 
 .battle-prize-inner {
-  background: linear-gradient(135deg, rgba(212,160,23,0.15) 0%, rgba(245,200,66,0.1) 100%);
-  border: 1.5px solid rgba(212,160,23,0.5);
+  background: rgba(232,64,10,0.1);
+  border: 1px solid rgba(232,64,10,0.3);
   border-radius: var(--radius-sm);
-  padding: 20px 24px;
+  padding: 20px 16px;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
+  gap: 12px;
+  text-align: center;
 }
 
 .battle-prize-label {
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
-  color: var(--gold-light);
-  background: rgba(212,160,23,0.2);
-  padding: 3px 10px;
-  border-radius: 4px;
-  flex-shrink: 0;
+  letter-spacing: 0.12em;
+  color: rgba(255,255,255,0.7);
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(232,64,10,0.4);
+  padding-bottom: 8px;
+  width: 100%;
+  text-align: center;
 }
 
 .battle-prize-amount {
   font-family: var(--font-en);
-  font-size: 2.2rem;
+  font-size: 2.6rem;
   font-weight: 900;
-  color: var(--gold-light);
+  color: var(--fire-light);
   letter-spacing: -0.02em;
-  flex-shrink: 0;
+  text-shadow: 0 0 20px rgba(232,64,10,0.5);
+  line-height: 1;
 }
 
 .battle-prize-plus {
   font-size: 0.78rem;
   line-height: 1.6;
-  color: rgba(245,200,66,0.8);
+  color: rgba(255,140,80,0.9);
 }
 
 .battle-flow-block {
-  margin-bottom: 28px;
+  margin-bottom: 48px;
 }
 
 .battle-flow-block h4 {
-  font-size: 0.88rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: rgba(255,255,255,0.9);
   letter-spacing: 0.06em;
   margin-bottom: 14px;
   text-transform: uppercase;
+}
+
+/* 1ボックス型フロー */
+.battle-flow-box {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: var(--radius-sm);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.battle-flow-steps-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bflow-row {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  padding: 14px 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-sm);
+}
+
+.bflow-row-winner {
+  border-color: rgba(232,64,10,0.4);
+  background: rgba(232,64,10,0.08);
+}
+
+.bflow-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(232,64,10,0.3);
+  border: 1px solid rgba(232,64,10,0.5);
+  color: var(--fire-light);
+  font-size: 0.85rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bflow-num-winner {
+  background: rgba(232,64,10,0.2);
+  border-color: rgba(232,64,10,0.4);
+  font-size: 1rem;
+}
+
+.bflow-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.bflow-connector {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.3);
+  flex-shrink: 0;
+}
+
+.battle-vote-note {
+  margin-top: 16px;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.6;
 }
 
 .battle-flow-steps {
@@ -2682,15 +2922,20 @@ section {
 }
 
 .bflow-label {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 2px;
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: var(--fire-light);
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.bflow-row-winner .bflow-label {
+  color: #ffffff;
 }
 
 .bflow-detail {
-  font-size: 0.72rem;
-  color: rgba(255,255,255,0.55);
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.6);
 }
 
 .bflow-arrow {
@@ -2699,20 +2944,14 @@ section {
   flex-shrink: 0;
 }
 
-.battle-vote-note {
-  font-size: 0.8rem;
-  color: rgba(245,200,66,0.8);
-  margin-top: 12px;
-  line-height: 1.5;
-}
 
 /* 事前審査員 */
 .battle-judges-block {
-  margin-bottom: 28px;
+  margin-bottom: 48px;
 }
 
 .battle-judges-block h4 {
-  font-size: 0.92rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: rgba(255,255,255,0.9);
   margin-bottom: 6px;
@@ -2774,7 +3013,7 @@ section {
   align-items: center;
   justify-content: center;
   font-family: var(--font-en);
-  font-size: 0.9rem;
+  font-size: 1.4rem;
   font-weight: 700;
   flex-shrink: 0;
 }
@@ -2795,11 +3034,11 @@ section {
 
 /* 当日コメンテーター */
 .battle-commentators-block {
-  margin-bottom: 28px;
+  margin-bottom: 48px;
 }
 
 .battle-commentators-block h4 {
-  font-size: 0.92rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: rgba(255,255,255,0.9);
   margin-bottom: 6px;
@@ -2851,6 +3090,15 @@ section {
   line-height: 1.1;
 }
 
+.commentator-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid rgba(255,255,255,0.2);
+}
+
 .prev-winner-avatar {
   background: linear-gradient(135deg, var(--fire) 0%, #ff7b2a 100%);
   box-shadow: 0 0 14px rgba(232,64,10,0.5);
@@ -2895,11 +3143,11 @@ section {
 
 /* 過去の天下一武闘会スライドショー */
 .battle-history-block {
-  margin: 28px 0 24px;
+  margin: 48px 0 44px;
 }
 
 .battle-history-block h4 {
-  font-size: 0.9rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: rgba(255,255,255,0.85);
   margin-bottom: 12px;
@@ -2912,7 +3160,7 @@ section {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 8;
   background: rgba(0,0,0,0.3);
   max-width: 600px;
   margin: 0 auto;
@@ -2976,11 +3224,11 @@ section {
 
 /* 今年の出場者 */
 .battle-entrants-block {
-  margin: 24px 0;
+  margin: 44px 0;
 }
 
 .battle-entrants-block h4 {
-  font-size: 0.9rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: rgba(255,255,255,0.85);
   margin-bottom: 12px;
@@ -3028,7 +3276,7 @@ section {
 }
 
 .entrants-prize {
-  font-size: 0.9rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: rgba(255,255,255,0.9);
 }
@@ -3048,7 +3296,7 @@ section {
 .battle-cta-block {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   padding-top: 4px;
 }
@@ -3078,6 +3326,11 @@ section {
 }
 
 /* ── PARTY: 懇親会 ── */
+.prog-card-party .prog-card-title-block {
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .prog-card-party {
   background: linear-gradient(135deg, #1a1200 0%, #241800 100%);
   border: 1.5px solid rgba(212,160,23,0.3);
@@ -3173,10 +3426,28 @@ section {
     font-size: 1.7rem;
   }
 
+  .battle-prize-cols {
+    grid-template-columns: 1fr;
+  }
+
   .battle-prize-inner {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+  }
+
+  .battle-flow-box {
+    padding: 16px;
+  }
+
+  .battle-flow-steps-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .bflow-connector {
+    transform: rotate(90deg);
+    text-align: center;
   }
 
   .battle-flow-steps {
@@ -3193,18 +3464,25 @@ section {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .award-judges-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .commentators-grid {
     grid-template-columns: 1fr;
   }
 
   .prog-card-title-block {
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
+  }
+
+  .prog-card-title-logo {
+    align-self: flex-start;
   }
 
   .prog-jcsa-logo {
-    height: 40px;
-    align-self: flex-start;
+    width: 100px;
   }
 
   .battle-slideshow {
