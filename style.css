@@ -1207,7 +1207,6 @@ section {
   font-weight: 700;
   color: var(--blue);
   letter-spacing: 1px;
-  text-transform: uppercase;
   margin-top: 20px;
   margin-bottom: 10px;
   padding-bottom: 6px;
@@ -1365,6 +1364,47 @@ section {
 
 .apply-flow {
   margin: 16px 0;
+}
+
+.apply-award-prize {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 24px;
+  padding: 20px;
+  background: linear-gradient(135deg, #eef3ff 0%, #e4ecff 100%);
+  border: 1px solid var(--blue-pale);
+  border-radius: var(--radius-sm);
+}
+
+.apply-award-prize-logo-wrap {
+  flex-shrink: 0;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.apply-award-prize-logo {
+  width: 80px;
+  height: auto;
+}
+
+.apply-award-prize-info {
+  flex: 1;
+}
+
+.apply-award-prize-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--blue-dark);
+  margin-bottom: 8px;
+}
+
+.apply-award-prize-desc {
+  font-size: 0.82rem;
+  line-height: 1.8;
+  color: var(--text-light);
 }
 
 .apply-flow h4 {
@@ -1704,6 +1744,9 @@ section {
 /* 応援団 */
 .supporters {
   text-align: center;
+  margin-top: 60px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
 }
 
 /* ── 協賛 ── */
@@ -1711,13 +1754,20 @@ section {
   margin-top: 60px;
   padding-top: 48px;
   border-top: 1px solid var(--border);
+  text-align: center;
 }
 
 .sponsors-title {
   font-size: 26px;
   font-weight: 900;
-  margin-bottom: 28px;
+  margin-bottom: 8px;
   color: var(--text);
+}
+
+.sponsors-desc {
+  color: var(--text-light);
+  font-size: 14px;
+  margin-bottom: 32px;
 }
 
 .sponsors-grid {
@@ -2473,6 +2523,14 @@ section {
   margin-top: 6px;
 }
 
+.battle-copy-subtitle {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 14px;
+  line-height: 1.4;
+}
+
 .prog-card-org {
   font-size: 0.78rem;
   color: var(--gray-500);
@@ -2750,8 +2808,75 @@ section {
   background: rgba(232,64,10,0.1);
   border: 1px solid rgba(232,64,10,0.3);
   border-radius: var(--radius-sm);
-  padding: 20px 24px;
+  padding: 24px;
   margin-bottom: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.battle-copy-main {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.battle-founder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  flex-shrink: 0;
+  width: 120px;
+}
+
+.battle-founder-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(232,64,10,0.5);
+}
+
+.battle-founder-name {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.3;
+}
+
+.battle-founder-title {
+  font-size: 0.65rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+}
+
+.battle-copy-speech {
+  flex: 1;
+  position: relative;
+  padding: 16px 56px;
+}
+
+.battle-copy-speech::before,
+.battle-copy-speech::after {
+  position: absolute;
+  font-size: 4rem;
+  font-weight: 500;
+  color: rgba(255,107,53,0.7);
+  line-height: 1;
+}
+
+.battle-copy-speech::before {
+  content: '「';
+  top: 0;
+  left: -8px;
+}
+
+.battle-copy-speech::after {
+  content: '」';
+  bottom: 0;
+  right: -8px;
 }
 
 .battle-lead {
@@ -2791,15 +2916,21 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
+  align-items: stretch;
 }
 
 .battle-prize-benefits {
-  align-items: center;
+  align-items: flex-start;
+}
+
+.battle-prize-benefits .battle-prize-label {
+  text-align: center;
+  width: 100%;
 }
 
 .battle-prize-plus-list {
   list-style: none;
-  padding: 0;
+  padding: 10px 0 0;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -2812,20 +2943,9 @@ section {
   font-weight: 700;
   line-height: 1.5;
   color: var(--fire-light);
-  background: rgba(232,64,10,0.15);
-  border: 1px solid rgba(232,64,10,0.3);
-  border-radius: 6px;
   padding: 8px 12px 8px 28px;
   position: relative;
   text-align: left;
-}
-
-.battle-prize-plus-list li::before {
-  content: '＋';
-  position: absolute;
-  left: 10px;
-  color: var(--fire-light);
-  font-weight: 900;
 }
 
 .battle-prize-inner {
@@ -2836,20 +2956,25 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 12px;
+  justify-content: flex-start;
+  gap: 0;
   text-align: center;
+  height: 100%;
+  box-sizing: border-box;
 }
 
 .battle-prize-label {
-  font-size: 0.72rem;
+  font-size: 0.88rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   color: rgba(255,255,255,0.7);
   text-transform: uppercase;
   border-bottom: 1px solid rgba(232,64,10,0.4);
-  padding-bottom: 8px;
+  padding-bottom: 10px;
+  margin-bottom: 0;
   width: 100%;
   text-align: center;
+  flex-shrink: 0;
 }
 
 .battle-prize-amount {
@@ -2860,6 +2985,10 @@ section {
   letter-spacing: -0.02em;
   text-shadow: 0 0 20px rgba(232,64,10,0.5);
   line-height: 1;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .battle-prize-plus {
@@ -2953,8 +3082,6 @@ section {
 .battle-vote-note {
   margin-top: 16px;
   padding: 10px 14px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.2);
   border-radius: 6px;
   font-size: 0.82rem;
   font-weight: 700;
@@ -3596,6 +3723,38 @@ section {
   .award-flag-section,
   .award-eval-row,
   .award-session-block,
+  .battle-copy-block {
+    flex-direction: column;
+  }
+
+  .battle-copy-main {
+    flex-direction: column;
+  }
+
+  .battle-founder {
+    flex-direction: row;
+    width: 100%;
+    text-align: left;
+    align-items: center;
+  }
+
+  .battle-copy-speech {
+    padding: 12px 40px;
+  }
+
+  .battle-copy-speech::before,
+  .battle-copy-speech::after {
+    font-size: 3rem;
+  }
+
+  .battle-copy-speech::before {
+    left: 0;
+  }
+
+  .battle-copy-speech::after {
+    right: 0;
+  }
+
   .battle-copy-block,
   .battle-prize-block,
   .battle-flow-block,
