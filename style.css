@@ -1609,6 +1609,14 @@ section {
   border-left: 3px solid var(--blue);
 }
 
+.jcsa-members-img {
+  width: 70%;
+  height: auto;
+  border-radius: var(--radius-sm);
+  display: block;
+  margin: 0 auto;
+}
+
 .org-desc {
   font-size: 14px;
   color: var(--text-light);
@@ -1696,6 +1704,71 @@ section {
 /* 応援団 */
 .supporters {
   text-align: center;
+}
+
+/* ── 協賛 ── */
+.sponsors {
+  margin-top: 60px;
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+}
+
+.sponsors-title {
+  font-size: 26px;
+  font-weight: 900;
+  margin-bottom: 28px;
+  color: var(--text);
+}
+
+.sponsors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.sponsor-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.sponsor-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  background: #f8f9fb;
+  border-radius: var(--radius-sm);
+  padding: 12px 24px;
+}
+
+.sponsor-logo {
+  max-height: 60px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.sponsor-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sponsor-name {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.sponsor-desc {
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: var(--text-light);
 }
 
 .supporters-title {
@@ -2033,6 +2106,10 @@ section {
   }
 
   .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sponsors-grid {
     grid-template-columns: 1fr;
   }
 
@@ -2515,9 +2592,8 @@ section {
 }
 
 .award-section-h4 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 800;
-  color: var(--blue-dark);
   margin: 28px 0 16px;
   padding-bottom: 8px;
   border-bottom: 2px solid var(--blue-pale);
@@ -3422,8 +3498,18 @@ section {
     max-width: 100%;
   }
 
+  .prog-duration {
+    display: none;
+  }
+
   .battle-prize-amount {
     font-size: 1.7rem;
+    text-align: center;
+    width: 100%;
+  }
+
+  .jcsa-members-img {
+    width: 100%;
   }
 
   .battle-prize-cols {
