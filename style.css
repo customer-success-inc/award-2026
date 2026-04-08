@@ -160,7 +160,7 @@ body {
   background: var(--white);
   color: var(--blue);
   text-decoration: none;
-  padding: 7px 14px;
+  padding: 7px 20px;
   border-radius: 50px;
   font-size: 12px;
   font-weight: 700;
@@ -168,6 +168,7 @@ body {
   border: 2px solid var(--blue-light);
   white-space: nowrap;
   margin-left: auto;
+  margin-right: 4px;
 }
 
 .nav-hamburger {
@@ -177,7 +178,7 @@ body {
   background: none;
   border: none;
   cursor: pointer;
-  margin-left: auto;
+  margin-left: 0;
   padding: 4px;
 }
 
@@ -2856,6 +2857,9 @@ section {
   flex: 1;
   position: relative;
   padding: 16px 56px;
+  min-width: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .battle-copy-speech::before,
@@ -3564,8 +3568,8 @@ section {
   }
 
   .nav-logo-img {
-    max-width: 120px;
-    height: 22px;
+    max-width: 140px;
+    height: 30px;
   }
   /* 時刻・コネクター・カードを縦積みに */
   .prog-item {
@@ -3700,6 +3704,25 @@ section {
 
   .battle-slideshow {
     max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .battle-history-block {
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .battle-slides {
+    width: 100%;
+  }
+
+  .battle-slide {
+    min-width: 100%;
+    max-width: 100%;
+    flex-shrink: 0;
   }
 
   .party-gif {
@@ -3739,20 +3762,21 @@ section {
   }
 
   .battle-copy-speech {
-    padding: 12px 40px;
+    padding: 0 0;
+    overflow: hidden;
   }
 
   .battle-copy-speech::before,
   .battle-copy-speech::after {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 
   .battle-copy-speech::before {
-    left: 0;
+    display: none;
   }
 
   .battle-copy-speech::after {
-    right: 0;
+    display: none;
   }
 
   .battle-copy-block,
@@ -3767,6 +3791,16 @@ section {
     max-width: 100%;
     box-sizing: border-box;
     overflow-x: hidden;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .battle-copy-subtitle,
+  .battle-lead,
+  .battle-desc,
+  .battle-vote-note {
+    word-break: break-word;
+    overflow-wrap: break-word;
   }
 
   /* コンテナ全体 */
