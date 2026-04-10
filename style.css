@@ -2660,7 +2660,7 @@ section {
 
 .award-judges-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   margin-bottom: 32px;
 }
@@ -2698,16 +2698,11 @@ section {
   color: var(--text);
 }
 
-.award-judge-org {
+.award-judge-desc {
   font-size: 0.72rem;
   color: var(--text-light);
-  line-height: 1.4;
-}
-
-.award-judge-title {
-  font-size: 0.72rem;
-  color: var(--blue-dark);
-  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
 }
 
 .speaker-photo {
@@ -3571,6 +3566,12 @@ section {
     max-width: 140px;
     height: 30px;
   }
+
+  .section-desc {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+  
   /* 時刻・コネクター・カードを縦積みに */
   .prog-item {
     display: flex;
@@ -3822,6 +3823,119 @@ section {
 
   .count-num {
     font-size: 1.6rem;
+  }
+
+  /* イベント概要 説明文を小さく */
+  .about-card-content p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .about-card {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .about-card-icon {
+    font-size: 24px;
+  }
+
+  /* 審査スケジュール スリム化 */
+  .timeline-item {
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .timeline-dot {
+    width: 40px;
+    height: 40px;
+    font-size: 13px;
+  }
+
+  .timeline-content {
+    padding: 12px 16px;
+  }
+
+  .timeline::before {
+    left: 19px;
+  }
+
+  /* 主催・協力 スリム化 */
+  .org-card {
+    padding: 20px;
+  }
+
+  .org-mission {
+    font-size: 12px;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+  }
+
+  .org-desc {
+    font-size: 12px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+  }
+
+  .founder {
+    gap: 10px;
+  }
+
+  .founder-photo {
+    width: 44px;
+    height: 44px;
+  }
+
+  .founder-info strong {
+    font-size: 13px;
+  }
+
+  .founder-info span,
+  .founder-info small {
+    font-size: 11px;
+  }
+
+  .founders {
+    gap: 10px;
+  }
+
+  /* 協賛 スリム化 */
+  .sponsor-card {
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .sponsor-logo-wrap {
+    height: 56px;
+  }
+
+  .sponsor-desc {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  /* 当日の流れ スリム化 */
+  .battle-flow-box {
+    gap: 8px;
+    padding: 12px;
+  }
+
+  .bflow-row {
+    padding: 10px 8px;
+    gap: 4px;
+  }
+
+  .bflow-label {
+    font-size: 0.95rem;
+  }
+
+  .bflow-detail {
+    font-size: 0.75rem;
+  }
+
+  .battle-vote-note {
+    font-size: 0.75rem;
+    margin-top: 10px;
   }
 }
 
