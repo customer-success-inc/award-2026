@@ -1771,6 +1771,38 @@ section {
   margin-bottom: 32px;
 }
 
+.sponsor-logos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+
+.sponsor-logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.sponsor-type-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-light);
+  background: var(--gray-100);
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 3px 12px;
+}
+
+.sponsor-logo-img {
+  height: 48px;
+  width: auto;
+  max-width: 240px;
+  object-fit: contain;
+}
+
 .sponsors-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
