@@ -276,39 +276,43 @@ window.addEventListener('scroll', updateActiveNav, { passive: true });
    スライドショー（天下一武闘会）
 ────────────────────────────────── */
 (function () {
-  const slideshow = document.querySelector('.battle-slideshow');
-  if (!slideshow) return;
+  const slideshows = document.querySelectorAll('.battle-slideshow');
+  if (!slideshows.length) return;
 
-  const slides = slideshow.querySelectorAll('.battle-slide');
-  const dotsContainer = slideshow.querySelector('.slide-dots');
-  let current = 0;
-  let timer;
+  slideshows.forEach(slideshow => {
+    const slides = slideshow.querySelectorAll('.battle-slide');
+    const dotsContainer = slideshow.querySelector('.slide-dots');
+    let current = 0;
+    let timer;
 
-  // ドット生成
-  slides.forEach((_, i) => {
-    const dot = document.createElement('div');
-    dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
-    dot.addEventListener('click', () => goTo(i));
-    dotsContainer.appendChild(dot);
-  });
-
-  function goTo(n) {
-    current = (n + slides.length) % slides.length;
-    slideshow.querySelector('.battle-slides').style.transform = `translateX(-${current * 100}%)`;
-    dotsContainer.querySelectorAll('.slide-dot').forEach((d, i) => {
-      d.classList.toggle('active', i === current);
+    // ドット生成
+    slides.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = 'slide-dot' + (i === 0 ? ' active' : '');
+      dot.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(dot);
     });
+
+    function goTo(n) {
+      current = (n + slides.length) % slides.length;
+      slideshow.querySelector('.battle-slides').style.transform = `translateX(-${current * 100}%)`;
+      dotsContainer.querySelectorAll('.slide-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === current);
+      });
+      resetTimer();
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => goTo(current + 1), 3500);
+    }
+
+    slideshow.querySelectorAll('.slide-prev, .slide-next').forEach(btn => {
+      btn.addEventListener('click', () => {
+        goTo(current + (btn.classList.contains('slide-prev') ? -1 : 1));
+      });
+    });
+
     resetTimer();
-  }
-
-  function resetTimer() {
-    clearInterval(timer);
-    timer = setInterval(() => goTo(current + 1), 3500);
-  }
-
-  window.slideMove = function (btn, dir) {
-    goTo(current + dir);
-  };
-
-  resetTimer();
+  });
 })();

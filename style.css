@@ -1508,6 +1508,14 @@ section {
   text-align: center;
 }
 
+.btn-disabled {
+  background: var(--gray-200) !important;
+  color: var(--gray-500) !important;
+  cursor: not-allowed;
+  pointer-events: none;
+  box-shadow: none !important;
+}
+
 /* チケットブロック */
 .ticket-block {
   background: linear-gradient(135deg, var(--dark) 0%, var(--dark-3) 100%);
@@ -3405,6 +3413,10 @@ section {
   margin: 0 auto;
 }
 
+.entrants-slideshow {
+  aspect-ratio: 16 / 9;
+}
+
 .battle-slides {
   display: flex;
   height: 100%;
@@ -3476,48 +3488,33 @@ section {
   gap: 8px;
 }
 
-.entrants-reveal {
+.entrants-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.entrant-item {
   background: rgba(232,64,10,0.12);
   border: 1px solid rgba(232,64,10,0.4);
-  border-radius: 14px;
-  padding: 28px 24px;
-  text-align: center;
+  border-radius: 12px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
+  gap: 6px;
 }
 
-.entrants-date {
-  font-family: var(--font-en);
-  font-size: 4rem;
-  font-weight: 900;
-  color: var(--fire-light);
-  line-height: 1;
-  letter-spacing: -2px;
-  text-shadow: 0 0 30px rgba(232,64,10,0.6);
-}
-
-.entrants-reveal-label {
-  font-size: 1.3rem;
-  font-weight: 900;
+.entrant-name {
+  font-size: 1.1rem;
+  font-weight: 800;
   color: #fff;
-  letter-spacing: 0.05em;
 }
 
-.entrants-entry {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.8);
-}
-
-.entrants-entry strong {
-  color: var(--fire-light);
-}
-
-.entrants-prize {
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: rgba(255,255,255,0.9);
+.entrant-org {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.75);
 }
 
 /* 懇親会GIF */
@@ -3767,12 +3764,8 @@ section {
     max-width: 100%;
   }
 
-  .entrants-date {
-    font-size: 3rem;
-  }
-
-  .entrants-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .entrants-list {
+    grid-template-columns: 1fr;
   }
 
   /* アワードカード内の全要素を幅内に収める */
